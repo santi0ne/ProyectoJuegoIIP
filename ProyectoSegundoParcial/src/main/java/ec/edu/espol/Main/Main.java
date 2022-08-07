@@ -96,17 +96,13 @@ public class Main {
     
     public static void main(String[] args){
          
-        ArrayList<DecisionTree<String>> listaPreguntas= new ArrayList<>();
+        ArrayList<String> listaPreguntas= new ArrayList<>();
         
         try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/preguntas.txt"))){
             String linea;
             while((linea=bufferedReader.readLine())!=null){
-                String[] preguntas=linea.split(",");
-                
-                DecisionTree<String> newArbol= new DecisionTree<>(preguntas[1]);
-                newArbol.numPosicion=Integer.valueOf(preguntas[0]);
-                
-                listaPreguntas.add(newArbol);
+
+                listaPreguntas.add(linea);
                         
                 }
         } catch (IOException ex) { 
@@ -114,14 +110,14 @@ public class Main {
         }
         
         
-        DecisionTree<String> raiz=listaPreguntas.get(0);
+        DecisionTree<String> raiz=new DecisionTree<>(listaPreguntas.get(0));
         listaPreguntas.remove(listaPreguntas.get(0));
         
         
-        for(DecisionTree<String> arb: listaPreguntas){
-            raiz=raiz.insertar(arb, raiz);
+        for(String pregunta: listaPreguntas){
+            raiz=raiz.insertar(pregunta, raiz);
         }
-        
+            
         mostrarPreguntas(raiz);
             
      }

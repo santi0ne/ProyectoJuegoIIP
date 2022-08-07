@@ -1,6 +1,11 @@
-perro,si,si,si
-loro,si,no,si,si
-iguana,si,no,no,si
-mariposa,no,si,si,si
-pulpo,no,no,si,si
-cangrejo,no,no,no,si
+tiburon,si,si,si,si
+oso,si,si,si,no
+oso polar,si,si,no,si
+liebre,si,si,no,no
+vendado,si,no,si,no
+reno,si,no,no,no
+pato,no,si,si,si
+iguana,no,si,si,no
+pez,no,si,no,no
+hormiga,no,no,si,no
+pinguino,no,no,no,si

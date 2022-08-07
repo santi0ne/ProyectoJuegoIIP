@@ -1,12 +1,4 @@
-30,Es vertebrado?
-15,Es mamifero?
-14,Es domestico?
-17,Es un ave?
-16,Come semillas?
-18,Es un reptil?
-45,Es un insecto?
-40,Este insecto vuela?
-35,Este insecto posee dos grandes alas?
-50,Es un molusco?
-48,Este molusco tiene tentaculos?
-65,Es un crustaceo?
+Es mamifero?
+Es carnivoro?
+Vive en lugares calidos?
+Sabe nadar?

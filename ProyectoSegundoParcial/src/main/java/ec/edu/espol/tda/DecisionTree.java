@@ -5,14 +5,12 @@
 
 package ec.edu.espol.tda;
 
-import java.util.Comparator;
-
 /**
  *
  * @author Guillermo Arévalo
  * @param <E>
  */
-public class DecisionTree<E> implements Comparator{
+public class DecisionTree<E> {
     
        public E data;
        public DecisionTree<E>  izquierdo,derecho;
@@ -22,21 +20,7 @@ public class DecisionTree<E> implements Comparator{
        this.data=data;
        izquierdo=derecho=null;
        }
-       
-       @Override
-        public int compare(Object o1, Object o2) {
-        
-            DecisionTree<String> arbol1=(DecisionTree<String>) o1;
-            DecisionTree<String> arbol2=(DecisionTree<String>) o2;
-
-            if(arbol1.numPosicion<arbol2.numPosicion) return -1;
-
-            else if (arbol1.numPosicion>arbol2.numPosicion) return 1;
-
-            else  return 0;
-        }
-
-       
+         
        public void recorridoPrefijo(){
             System.out.println(data);
             if(izquierdo!=null) izquierdo.recorridoPrefijo();
@@ -44,38 +28,20 @@ public class DecisionTree<E> implements Comparator{
         }
        
        
-       public static DecisionTree<String> insertar(DecisionTree<String> pregunta, DecisionTree<String> arbol){
-            
-           if(arbol.data==null) return arbol;
-           
-           if(pregunta.data.equals(arbol.data)){
-               System.out.println("El elemento ya está insertado");
-               return arbol;
-           }
-           
+       public static DecisionTree<String> insertar(String pregunta, DecisionTree<String> raiz){
         
-            if(arbol.compare(pregunta, arbol)==-1){
-               if(arbol.izquierdo==null){
-                  arbol.izquierdo=pregunta;   
-               }
-               
-               else{
-                  arbol.izquierdo=insertar(pregunta,arbol.izquierdo);
-               }    
-            }
-            
-            if(arbol.compare(pregunta, arbol)==1){
-               if(arbol.derecho==null){
-                  arbol.derecho=pregunta; 
-    
-               }
-               
-               else{
-                  arbol.derecho=insertar(pregunta,arbol.derecho); 
-               }    
-            }
-            return arbol;
+        if(raiz.derecho==null || raiz.izquierdo==null){
+            raiz.derecho=new DecisionTree<>(pregunta);
+            raiz.izquierdo=new DecisionTree<>(pregunta);
         }
+        
+        else{
+            raiz.derecho=insertar(pregunta,raiz.derecho);
+            raiz.izquierdo=insertar(pregunta,raiz.izquierdo);
+        }
+        
+        return raiz;
+    }
 
         
               
