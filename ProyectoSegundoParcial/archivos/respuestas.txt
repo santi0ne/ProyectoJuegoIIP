@@ -1,4 +1,6 @@
 perro,si,si,si
 loro,si,no,si,si
 iguana,si,no,no,si
-mariposa,no,si,si
+mariposa,no,si,si,si
+pulpo,no,no,si,si
+cangrejo,no,no,no,si

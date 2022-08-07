@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package edu.espol.proyectosegundoparcial;
+package ec.edu.espol.tda;
 
 import java.util.Comparator;
 
@@ -12,13 +12,13 @@ import java.util.Comparator;
  * @author Guillermo Arévalo
  * @param <E>
  */
-public class AVL<E> implements Comparator{
+public class DecisionTree<E> implements Comparator{
     
        public E data;
-       public AVL<E>  izquierdo,derecho;
+       public DecisionTree<E>  izquierdo,derecho;
        public int numPosicion;
 
-       public AVL(E data){
+       public DecisionTree(E data){
        this.data=data;
        izquierdo=derecho=null;
        }
@@ -26,8 +26,8 @@ public class AVL<E> implements Comparator{
        @Override
         public int compare(Object o1, Object o2) {
         
-            AVL<String> arbol1=(AVL<String>) o1;
-            AVL<String> arbol2=(AVL<String>) o2;
+            DecisionTree<String> arbol1=(DecisionTree<String>) o1;
+            DecisionTree<String> arbol2=(DecisionTree<String>) o2;
 
             if(arbol1.numPosicion<arbol2.numPosicion) return -1;
 
@@ -43,7 +43,8 @@ public class AVL<E> implements Comparator{
             if(derecho!=null) derecho.recorridoPrefijo();    
         }
        
-       public static AVL<String> insertar(AVL<String> pregunta, AVL<String> arbol){
+       
+       public static DecisionTree<String> insertar(DecisionTree<String> pregunta, DecisionTree<String> arbol){
             
            if(arbol.data==null) return arbol;
            
