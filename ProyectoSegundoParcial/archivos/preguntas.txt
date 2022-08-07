@@ -1,8 +1,8 @@
-Es vertebrado?
-Es mamifero?
-Es domestico?
-Es un ave?
-Come semillas?
-Es un reptil?
-Es invertebrado?
-Es un insecto?
+20,Es vertebrado?
+15,Es mamifero?
+14,Es domestico?
+17,Es un ave?
+16,Come semillas?
+18,Es un reptil?
+22,Es invertebrado?
+21,Es un insecto?

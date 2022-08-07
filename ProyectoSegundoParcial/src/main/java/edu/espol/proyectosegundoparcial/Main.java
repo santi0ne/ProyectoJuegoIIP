@@ -18,17 +18,7 @@ import java.util.Scanner;
  */
 public class Main {
     
-    static int i=0;
-    
-    public static void cargarPreguntas(ArrayList<String> pregunta, AVL<String> arbol){
-            arbol.data=pregunta.get(i);
-            i++;
-            if(arbol.izquierdo!=null) cargarPreguntas(pregunta,arbol.izquierdo);
-            if(arbol.derecho!=null) cargarPreguntas(pregunta,arbol.derecho);    
-    }
-    
     static Scanner sc=new Scanner(System.in);
-    
     static ArrayList<String> respuestas=new ArrayList<>();
     
     public static void mostrarPreguntas(AVL<String> arbol){
@@ -40,8 +30,7 @@ public class Main {
             System.out.println("Conteste si o no");
             respuesta=sc.nextLine();
         }
-        
-        
+         
         if(arbol.izquierdo!= null || arbol.derecho!=null){
 
             if(respuesta.toLowerCase().equals("si")){
@@ -65,29 +54,29 @@ public class Main {
 
     public static void obtenerRespuestas(ArrayList<String> respuestas){
         
-        ArrayList<ArrayList<String>> listaRespuestas= new ArrayList<>();
+        boolean encontrado=false;
+        
+        ArrayList<ArrayList<String>> listaTodasRespuestas= new ArrayList<>();
         
         try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/respuestas.txt"))){
             String linea;
             while((linea=bufferedReader.readLine())!=null){
                 
-                String[] texto=linea.split(";");
-                String[] resp=texto[1].split(",");
                 
-                ArrayList<String> arr=new ArrayList<>();
-                arr.add(texto[0]);
+                String[] resp=linea.split(",");
+                
+                ArrayList<String> arrRespAnimal=new ArrayList<>();
                 for(String s:resp){
-                    arr.add(s);
+                    arrRespAnimal.add(s);
                 }
-                listaRespuestas.add(arr);
+                listaTodasRespuestas.add(arrRespAnimal);
             }
         } catch (IOException ex) { 
             ex.printStackTrace();
         }
         
-        boolean encontrado=false;
         
-        for(ArrayList<String> arr:listaRespuestas){
+        for(ArrayList<String> arr:listaTodasRespuestas){
             List<String> arrResp=arr.subList(1,arr.size());
 ;
             if(arrResp.equals(respuestas)){
@@ -98,7 +87,7 @@ public class Main {
             
         }
         
-        if(encontrado=false){
+        if(encontrado==false){
             System.out.println("Animal no encontrado");  
         }
         
@@ -106,38 +95,37 @@ public class Main {
     
     public static void main(String[] args){
          
-        ArrayList<String> listaPreguntas= new ArrayList<>();
+        ArrayList<AVL<String>> listaPreguntas= new ArrayList<>();
         
         try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/preguntas.txt"))){
             String linea;
             while((linea=bufferedReader.readLine())!=null){
-                listaPreguntas.add(linea);
+                String[] preguntas=linea.split(",");
+                
+                AVL<String> newArbol= new AVL<>(preguntas[1]);
+                newArbol.numPosicion=Integer.valueOf(preguntas[0]);
+                
+                listaPreguntas.add(newArbol);
+                        
                 }
         } catch (IOException ex) { 
             ex.printStackTrace();
         }
-    
         
-    
-         
-        AVL<String> arbol= new AVL<>("1");
-        arbol.izquierdo=new AVL<>("2");
-        arbol.izquierdo.izquierdo=new AVL<>("3");
-        arbol.izquierdo.derecho=new AVL<>("4");
-        arbol.izquierdo.derecho.izquierdo=new AVL<>("5");
-        arbol.izquierdo.derecho.derecho=new AVL<>("6");
-        arbol.derecho=new AVL<>("7");
-        arbol.derecho.izquierdo=new AVL<>("8");
         
-        int i=0;
+        AVL<String> arbol=new AVL<>(listaPreguntas.get(0).data);
+        arbol.numPosicion=listaPreguntas.get(0).numPosicion;
+        List<AVL<String>> listaPregunta= listaPreguntas.subList(1, listaPreguntas.size());
+        
+        
+        for(AVL<String> arb: listaPregunta){
          
-        cargarPreguntas(listaPreguntas, arbol);
-         
+            arbol=arbol.insertar(arb, arbol);
+        
+        }
+        
         mostrarPreguntas(arbol);
-        
-         
-         
-         
+            
      }
     
 }
