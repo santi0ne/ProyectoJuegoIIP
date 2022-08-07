@@ -113,18 +113,15 @@ public class Main {
         }
         
         
-        AVL<String> arbol=new AVL<>(listaPreguntas.get(0).data);
-        arbol.numPosicion=listaPreguntas.get(0).numPosicion;
-        List<AVL<String>> listaPregunta= listaPreguntas.subList(1, listaPreguntas.size());
+        AVL<String> raiz=listaPreguntas.get(0);
+        listaPreguntas.remove(listaPreguntas.get(0));
         
         
-        for(AVL<String> arb: listaPregunta){
-         
-            arbol=arbol.insertar(arb, arbol);
-        
+        for(AVL<String> arb: listaPreguntas){
+            raiz=raiz.insertar(arb, raiz);
         }
         
-        mostrarPreguntas(arbol);
+        mostrarPreguntas(raiz);
             
      }
     

@@ -33,9 +33,7 @@ public class AVL<E> implements Comparator{
 
             else if (arbol1.numPosicion>arbol2.numPosicion) return 1;
 
-            else if (arbol1.numPosicion==arbol2.numPosicion) return 0;
-
-            return 0;
+            else  return 0;
         }
 
        
