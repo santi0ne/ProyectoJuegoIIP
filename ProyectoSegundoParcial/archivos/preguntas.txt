@@ -1,9 +1,9 @@
 Es mamifero?
 Es carnivoro?
 Tiene 4 patas?
-Es doméstico?
+Es domestico?
 Sabe nadar?
 Tiene pelaje?
-Su carne es comunmento consumida por humanos?
+Su carne es comunmente consumida por humanos?
 Es vertebrado?
 Sabe volar?

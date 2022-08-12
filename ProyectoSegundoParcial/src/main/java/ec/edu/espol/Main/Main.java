@@ -117,8 +117,20 @@ public class Main {
         for(String pregunta: listaPreguntas){
             raiz=raiz.insertar(pregunta, raiz);
         }
-            
-        mostrarPreguntas(raiz);
+          
+        
+        System.out.println("------¿En qué animal estás pensando?------ \nPiensa en un animal e intentaré advininarlo \n¿Estás listo? Si/No");
+        
+        String resp="";
+        
+        while(!resp.toLowerCase().equals("si") && !resp.toLowerCase().equals("no")){
+            resp=sc.nextLine();
+        }
+        
+        
+        if(resp.toLowerCase().equals("si")) mostrarPreguntas(raiz);
+        
+        else System.out.println("Fin del juego");
             
      }
     
