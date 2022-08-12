@@ -1,4 +1,9 @@
 Es mamifero?
 Es carnivoro?
-Vive en lugares calidos?
+Tiene 4 patas?
+Es doméstico?
 Sabe nadar?
+Tiene pelaje?
+Su carne es comunmento consumida por humanos?
+Es vertebrado?
+Sabe volar?
