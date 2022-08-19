@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espol.Main;
+package ec.edu.espol.main;
 
 import ec.edu.espol.tda.DecisionTree;
 import java.io.BufferedReader;
