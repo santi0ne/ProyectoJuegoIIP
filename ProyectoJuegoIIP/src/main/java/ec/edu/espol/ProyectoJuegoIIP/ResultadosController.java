@@ -5,22 +5,15 @@
  */
 package ec.edu.espol.ProyectoJuegoIIP;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-
 /**
  * FXML Controller class
  *
  * @author g_are
  */
-public class ResultadosController implements Initializable {
+public class ResultadosController{
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+
+    public void initialize() {
         // TODO
     }    
     

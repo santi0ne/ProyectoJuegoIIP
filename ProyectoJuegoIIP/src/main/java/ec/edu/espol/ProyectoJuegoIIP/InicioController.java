@@ -5,23 +5,44 @@
  */
 package ec.edu.espol.ProyectoJuegoIIP;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author g_are
  */
-public class InicioController implements Initializable {
+public class InicioController  {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    @FXML
+    private Button btonSi;
+    @FXML
+    private Button btonNo;
+    @FXML
+    private Spinner<Integer> numPreguntas;
+
+ 
+    public void initialize() {
+        SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20);
+        intFactory.setValue(1);
+        numPreguntas.setValueFactory(intFactory);
+      
     }    
+
+    @FXML
+    private void botonSi() throws IOException {
+         App.setRoot("ventanaJuego");
+    }
+
+    @FXML
+    private void botonNo() {
+        Stage stage = (Stage) this.btonNo.getScene().getWindow();
+        stage.close();
+    }
     
 }
