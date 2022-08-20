@@ -29,7 +29,7 @@ public class InicioController  {
  
     public void initialize() {
         SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20);
-        intFactory.setValue(1);
+        intFactory.setValue(20);
         numPreguntas.setValueFactory(intFactory);
       
     }    
