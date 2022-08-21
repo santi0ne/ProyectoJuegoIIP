@@ -20,3 +20,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .Encabezado{
     -fx-font-family: "Lucida Console";
 }
+
+.buttonSi{
+    -fx-background-color: linear-gradient(#DAF7A6,#58D68D);
+    -fx-background-radius: 30;
+}
+
+.buttonSi:hover{
+    -fx-background-color: #00FF00;
+    -fx-background-radius: 30;
+}
+
+.buttonSi:pressed{
+    -fx-background-color: #95FFA0;
+    -fx-background-radius: 30;
+}
+
+.buttonNo{
+    -fx-background-color: linear-gradient(#EC7063,#C0392B);
+    -fx-background-radius: 30;
+}
+
+.buttonNo:hover{
+    -fx-background-color: #FF0000;
+    -fx-background-radius: 30;
+}
+
+.buttonNo:pressed{
+    -fx-background-color: #FF6B6B;
+    -fx-background-radius: 30;
+}
+
+

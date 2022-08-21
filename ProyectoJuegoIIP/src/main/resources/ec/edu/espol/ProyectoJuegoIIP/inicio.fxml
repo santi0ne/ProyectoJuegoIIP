@@ -25,7 +25,7 @@
          <bottom>
             <HBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btonSi" mnemonicParsing="false" onAction="#botonSi" prefHeight="60.0" prefWidth="60.0" text="SI">
+                  <Button fx:id="btonSi" mnemonicParsing="false" onAction="#botonSi" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSi" text="SI">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -33,7 +33,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btonNo" mnemonicParsing="false" onAction="#botonNo" prefHeight="60.0" prefWidth="60.0" text="NO">
+                  <Button fx:id="btonNo" mnemonicParsing="false" onAction="#botonNo" prefHeight="60.0" prefWidth="60.0" styleClass="buttonNo" text="NO">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

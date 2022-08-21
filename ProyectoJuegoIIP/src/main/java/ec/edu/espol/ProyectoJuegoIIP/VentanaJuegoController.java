@@ -9,10 +9,12 @@ import ec.edu.espol.tda.DecisionTree;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -71,6 +73,7 @@ public class VentanaJuegoController {
         cerrarVentana();
         moverVentana();
         miniVentana();
+        colocarImagenBoton();
     }  
 
     public static ArrayList<String> getRespuestas() {
@@ -131,6 +134,15 @@ public class VentanaJuegoController {
             Stage stage = (Stage) this.txtTitle.getScene().getWindow();
             stage.setIconified(true);
         });
+    }
+    
+    public void colocarImagenBoton(){
+        URL linkSi = getClass().getResource("/ec/edu/espol/images/me-gusta.png");
+        URL linkNo = getClass().getResource("/ec/edu/espol/images/disgusto.png");
+        Image imgSi = new Image(linkSi.toString(), 50, 50, false, true);
+        Image imgNo = new Image(linkNo.toString(), 50, 50, false, true);
+        respSi.setGraphic(new ImageView(imgSi));
+        respNo.setGraphic(new ImageView(imgNo));
     }
     
 }

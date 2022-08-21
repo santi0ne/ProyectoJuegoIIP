@@ -8,11 +8,13 @@ package ec.edu.espol.ProyectoJuegoIIP;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -63,6 +65,7 @@ public class ResultadosController{
         cerrarVentana();
         moverVentana();
         miniVentana();
+        colocarImagenBoton();
     } 
     
     public void obtenerRespuestas(ArrayList<String> respuestas){
@@ -110,6 +113,12 @@ public class ResultadosController{
             Stage stage = (Stage) this.txtTitle.getScene().getWindow();
             stage.setIconified(true);
         });
+    }
+    
+    public void colocarImagenBoton(){
+        URL linkHouse = getClass().getResource("/ec/edu/espol/images/casa.png");
+        Image imgHouse = new Image(linkHouse.toString(), 50, 50, false, true);
+        volverJugar.setGraphic(new ImageView(imgHouse));
     }
     
 }
