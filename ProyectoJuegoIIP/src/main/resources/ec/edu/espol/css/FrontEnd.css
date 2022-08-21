@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Aug 20, 2022, 5:38:50 PM
+    Author     : santi
+*/
+
+.root{
+    -fx-background-color: #DAF7A6;
+    -fx-background-radius: 20;
+}
+
+.Border{
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+}

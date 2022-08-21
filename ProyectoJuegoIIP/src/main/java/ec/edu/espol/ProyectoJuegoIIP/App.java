@@ -7,9 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+
+import javafx.stage.StageStyle;
 
 /**
- * JavaFX App
  */
 public class App extends Application {
 
@@ -18,7 +21,13 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("inicio"), 800, 400);
+        scene.getStylesheets().add("ec/edu/espol/css/FrontEnd.css");
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setResizable(false);
+        stage.setTitle("Animals Everywhere!");
+        stage.getIcons().add(new Image("file:main/resources/ec/edu/espol/images/magic.png"));
         stage.show();
     }
 

@@ -6,10 +6,13 @@
 package ec.edu.espol.ProyectoJuegoIIP;
 
 import java.io.IOException;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -25,13 +28,23 @@ public class InicioController  {
     private Button btonNo;
     @FXML
     private Spinner<Integer> numPreguntas;
+    @FXML
+    private ImageView close;
+    @FXML
+    private ImageView min;
+    @FXML
+    private Label txtTitle;
+    @FXML
+    private ImageView icon;
 
  
     public void initialize() {
         SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20);
         intFactory.setValue(20);
         numPreguntas.setValueFactory(intFactory);
-      
+        cerrarVentana();
+        moverVentana();
+        miniVentana();
     }    
 
     @FXML
@@ -45,4 +58,25 @@ public class InicioController  {
         stage.close();
     }
     
+    public void cerrarVentana(){
+        close.setOnMouseClicked(e->{
+            Stage stage = (Stage) this.close.getScene().getWindow();
+            stage.close();
+        });
+    }
+    
+    public void moverVentana(){
+        txtTitle.setOnMouseDragged(eh->{
+            Stage stage = (Stage) this.txtTitle.getScene().getWindow();
+            stage.setX(eh.getScreenX());
+            stage.setY(eh.getScreenY());
+        });
+    }
+    
+    public void miniVentana(){
+        min.setOnMouseClicked(eh->{
+            Stage stage = (Stage) this.txtTitle.getScene().getWindow();
+            stage.setIconified(true);
+        });
+    }
 }
