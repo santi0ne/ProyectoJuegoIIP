@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,6 +34,14 @@ public class VentanaJuegoController {
     
     DecisionTree<String> arbolPregunta;
     DecisionTree<String> preguntaActual;
+    @FXML
+    private ImageView close;
+    @FXML
+    private ImageView min;
+    @FXML
+    private ImageView icon;
+    @FXML
+    private Label txtTitle;
     
 
     public void initialize() throws IOException {
@@ -57,6 +67,10 @@ public class VentanaJuegoController {
         
         preguntaActual=arbolPregunta;
         pregunta.setText(arbolPregunta.data);
+        
+        cerrarVentana();
+        moverVentana();
+        miniVentana();
     }  
 
     public static ArrayList<String> getRespuestas() {
@@ -95,6 +109,28 @@ public class VentanaJuegoController {
             pregunta.setText(preguntaActual.data);
         }  
         
+    }
+    
+    public void cerrarVentana(){
+        close.setOnMouseClicked(e->{
+            Stage stage = (Stage) this.close.getScene().getWindow();
+            stage.close();
+        });
+    }
+    
+    public void moverVentana(){
+        txtTitle.setOnMouseDragged(eh->{
+            Stage stage = (Stage) this.txtTitle.getScene().getWindow();
+            stage.setX(eh.getScreenX());
+            stage.setY(eh.getScreenY());
+        });
+    }
+    
+    public void miniVentana(){
+        min.setOnMouseClicked(eh->{
+            Stage stage = (Stage) this.txtTitle.getScene().getWindow();
+            stage.setIconified(true);
+        });
     }
     
 }
