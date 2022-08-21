@@ -16,3 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: white;
     -fx-background-radius: 20;
 }
+
+.Encabezado{
+    -fx-font-family: "Lucida Console";
+}

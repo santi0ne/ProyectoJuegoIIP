@@ -61,7 +61,7 @@
             <Image url="@../images/turtle.png" />
          </image>
       </ImageView>
-      <Label fx:id="txtTitle" layoutX="37.0" layoutY="6.0" text="Animals Everywhere!">
+      <Label fx:id="txtTitle" layoutX="37.0" layoutY="6.0" styleClass="Encabezado" text="Animals Everywhere!">
          <font>
             <Font size="11.0" />
          </font>
