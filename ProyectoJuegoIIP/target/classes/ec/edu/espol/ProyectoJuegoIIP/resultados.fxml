@@ -18,18 +18,24 @@
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="El animal en que has pensado es:">
+                  <Label fx:id="respuestaTitulo" text="El animal en que has pensado es:">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
                   </Label>
-                  <TilePane fx:id="animalesEncontrados" alignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" />
-                  <ImageView fx:id="imagenAnimal" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <TilePane fx:id="animalesEncontrados" alignment="CENTER" orientation="VERTICAL" prefHeight="131.0" prefWidth="792.0" />
+                  <ImageView fx:id="imagenAnimal" fitHeight="162.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/animales/sinRespuesta.jpg" />
+                     </image></ImageView>
                </children>
             </VBox>
          </center>
          <bottom>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="792.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="volverJugar" mnemonicParsing="false" onAction="#reiniciar" text="Volver a jugar">
                      <HBox.margin>
