@@ -11,8 +11,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,11 +34,6 @@ public class VentanaJuegoController {
     private Button respSi;
     @FXML
     private Button respNo;
-    
-    static private ArrayList<String> respuestas = new ArrayList<>();
-    
-    DecisionTree<String> arbolPregunta;
-    DecisionTree<String> preguntaActual;
     @FXML
     private ImageView close;
     @FXML
@@ -45,15 +43,25 @@ public class VentanaJuegoController {
     @FXML
     private Label txtTitle;
     
+    static private ArrayList<String> respuestas = new ArrayList<>(); 
+    DecisionTree<String> arbolPregunta;
+    DecisionTree<String> preguntaActual;
+    
 
     public void initialize() throws IOException {
+        
+        respuestas.removeAll(respuestas);
+        
+        int num=InicioController.getNumPreguntas();
+        int contador=0;
         
         ArrayList<String> listaPreguntas= new ArrayList<>();
         
         try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/preguntas.txt"))){
             String linea;
-            while((linea=bufferedReader.readLine())!=null){
-                listaPreguntas.add(linea);       
+            while((linea=bufferedReader.readLine())!=null && contador<num){
+                listaPreguntas.add(linea);    
+                contador++;
                 }
         } catch (IOException ex) { 
             ex.printStackTrace();
@@ -116,9 +124,17 @@ public class VentanaJuegoController {
     
     public void cerrarVentana(){
         close.setOnMouseClicked(e->{
-            Stage stage = (Stage) this.close.getScene().getWindow();
-            stage.close();
-        });
+        
+        Alert alerta= new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Ya te vas??");
+        alerta.setHeaderText("Estás seguro de salir del juego?");
+        alerta.setContentText("Nos estamos divirtiendo mucho :(");
+        Optional<ButtonType> result=alerta.showAndWait();
+         
+        if(result.get()==ButtonType.OK){
+        Stage stage = (Stage) this.close.getScene().getWindow();
+        stage.close();
+        }});
     }
     
     public void moverVentana(){

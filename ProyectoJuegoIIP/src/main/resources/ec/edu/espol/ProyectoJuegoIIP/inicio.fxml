@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.InicioController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.InicioController">
    <children>
       <BorderPane layoutX="3.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="793.0" styleClass="Border" stylesheets="@../css/FrontEnd.css">
          <top>
-            <Label prefHeight="53.0" prefWidth="210.0" text="20 Preguntas" BorderPane.alignment="CENTER">
+            <Label prefHeight="53.0" prefWidth="343.0" text="Animals Everywhere!" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="34.0" />
                </font>
@@ -47,7 +47,7 @@
          <left>
             <VBox alignment="CENTER" prefHeight="255.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="0.0" prefWidth="788.0" text="Para este juego debes pensar en un animal y a través de máximo 20 preguntas lo intentaré adivinar">
+                  <Label prefHeight="0.0" prefWidth="788.0" text="Para este juego debes pensar en un animal y a través de varias preguntas intentaré adivinar cuál es">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -55,7 +55,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="En cuańtas preguntas debo adivinar el animal?">
+                  <Label text="En cuántas preguntas debo adivinar el animal en el que estás pensando?">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -11,11 +11,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 /**
@@ -28,11 +32,7 @@ public class ResultadosController{
     @FXML
     private Button volverJugar;
     @FXML
-    private Label respuesta;
-    @FXML
     private ImageView imagenAnimal;
-    
-    private ArrayList<ArrayList<String>> listaTodasRespuestas= new ArrayList<>();
     @FXML
     private ImageView close;
     @FXML
@@ -41,9 +41,14 @@ public class ResultadosController{
     private ImageView icon;
     @FXML
     private Label txtTitle;
+    @FXML
+    private TilePane animalesEncontrados;
 
+    
+    private ArrayList<ArrayList<String>> listaTodasRespuestas= new ArrayList<>();
 
     public void initialize() {
+        
         
         try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/respuestas.txt"))){
             String linea;
@@ -74,15 +79,30 @@ public class ResultadosController{
 
         for(ArrayList<String> arr:listaTodasRespuestas){
             List<String> arrResp=arr.subList(1,arr.size());
-            if(arrResp.equals(respuestas)){
-                respuesta.setText(arr.get(0));
-                encontrado=true;
+            
+            if(InicioController.numPreguntasSelecc.equals(arrResp.size())){
+                if(arrResp.equals(respuestas)){;
+                    Label animal=new Label(arr.get(0));
+                    animalesEncontrados.getChildren().add(animal);
+                    encontrado=true;
+
+                } 
+            }
+            
+            else{
                 
-            }     
+                if(arr.subList(1,InicioController.numPreguntasSelecc+1).equals(respuestas)){
+                    Label animal=new Label(arr.get(0));
+                    animalesEncontrados.getChildren().add(animal);
+                    encontrado=true;
+
+                } 
+                
+            }
         }
         
         if(encontrado==false){
-            respuesta.setText("Animal no encontrado");  
+            //respuesta.setText("Animal no encontrado");  
         }
         
     }
@@ -95,9 +115,17 @@ public class ResultadosController{
     
     public void cerrarVentana(){
         close.setOnMouseClicked(e->{
-            Stage stage = (Stage) this.close.getScene().getWindow();
-            stage.close();
-        });
+        
+        Alert alerta= new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Ya te vas??");
+        alerta.setHeaderText("Estás seguro de salir del juego?");
+        alerta.setContentText("Nos estamos divirtiendo mucho :(");
+        Optional<ButtonType> result=alerta.showAndWait();
+         
+        if(result.get()==ButtonType.OK){
+        Stage stage = (Stage) this.close.getScene().getWindow();
+        stage.close();
+        }});
     }
     
     public void moverVentana(){

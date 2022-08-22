@@ -6,9 +6,11 @@
 package ec.edu.espol.ProyectoJuegoIIP;
 
 import java.io.IOException;
-import javafx.event.EventType;
+import java.util.Optional;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -36,33 +38,61 @@ public class InicioController  {
     private Label txtTitle;
     @FXML
     private ImageView icon;
+    
+    static Integer numPreguntasSelecc;
 
  
     public void initialize() {
-        SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20);
-        intFactory.setValue(20);
+        SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 9);
+        intFactory.setValue(9);
         numPreguntas.setValueFactory(intFactory);
         cerrarVentana();
         moverVentana();
         miniVentana();
-    }    
+    } 
+
+    public static Integer getNumPreguntas() {
+        return numPreguntasSelecc;
+    }
+    
+    
 
     @FXML
     private void botonSi() throws IOException {
-         App.setRoot("ventanaJuego");
+        numPreguntasSelecc=numPreguntas.getValue();
+        App.setRoot("ventanaJuego");
     }
 
     @FXML
     private void botonNo() {
-        Stage stage = (Stage) this.btonNo.getScene().getWindow();
-        stage.close();
+        
+        Alert alerta= new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Ya te vas??");
+        alerta.setHeaderText("Estás seguro de salir del juego?");
+        alerta.setContentText("Puedes empezar el juego cuando estés listo");
+        Optional<ButtonType> result=alerta.showAndWait();
+        
+        if(result.get()==ButtonType.OK){
+            Stage stage = (Stage) this.btonNo.getScene().getWindow();
+            stage.close();
+        }
     }
     
     public void cerrarVentana(){
+        
         close.setOnMouseClicked(e->{
-            Stage stage = (Stage) this.close.getScene().getWindow();
-            stage.close();
-        });
+        
+        Alert alerta= new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Ya te vas??");
+        alerta.setHeaderText("Estás seguro de salir del juego?");
+        alerta.setContentText("Nos estamos divirtiendo mucho :(");
+        Optional<ButtonType> result=alerta.showAndWait();
+         
+        if(result.get()==ButtonType.OK){
+        Stage stage = (Stage) this.close.getScene().getWindow();
+        stage.close();
+        }});
+    
     }
     
     public void moverVentana(){
