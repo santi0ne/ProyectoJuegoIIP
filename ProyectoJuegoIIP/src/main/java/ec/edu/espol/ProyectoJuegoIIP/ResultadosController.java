@@ -81,37 +81,28 @@ public class ResultadosController{
     public void obtenerRespuestas(ArrayList<String> respuestas){
         
         boolean encontrado=false;
+        Label animal=new Label();
 
         for(ArrayList<String> arr:listaTodasRespuestas){
             List<String> arrResp=arr.subList(1,arr.size());
             
             if(InicioController.numPreguntasSelecc.equals(arr.size())){
                 if(arrResp.equals(respuestas)){
-                    Label animal=new Label(arr.get(0));
+                    animal=new Label(arr.get(0));
                     animal.setFont(new Font("System",18));
                     animalesEncontrados.getChildren().add(animal);
-                    
-                  
-                    URL link = getClass().getResource("/ec/edu/espol/images/animales/Tortuga.png");
-                    Image img = new Image(link.toString(), 50, 50, false, true);
-                    imagenAnimal.setImage(img);
-                    
                     encontrado=true;
-       
-
                 } 
             }
             
             else{
-                
                 if(arr.subList(1,InicioController.numPreguntasSelecc+1).equals(respuestas)){
-                    Label animal=new Label(arr.get(0));
+                    animal=new Label(arr.get(0));
                     animal.setFont(new Font("System",18));
                     animalesEncontrados.getChildren().add(animal);
                     encontrado=true;
 
-                } 
-                
+                }   
             }
         }
         
@@ -121,6 +112,19 @@ public class ResultadosController{
             lb.setFont(new Font("System",24));
             lb.setStyle("-fx-font-weight: bold");
             animalesEncontrados.getChildren().add(lb);
+        }
+        
+        if(animalesEncontrados.getChildren().size()==1){
+            
+            File file = new File("archivos/animales/"+animal.getText()+".jpg");
+            Image image = new Image(file.toURI().toString(),300,300,true,true);
+            imagenAnimal.setImage(image);   
+        }
+        
+        else{
+            File file = new File("archivos/animales/sinRespuesta.jpg");
+            Image image = new Image(file.toURI().toString(),300,300,true,true);
+            imagenAnimal.setImage(image);   
         }
         
         if(animalesEncontrados.getChildren().size()>1){

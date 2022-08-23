@@ -11,12 +11,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.VentanaJuegoController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.VentanaJuegoController">
    <children>
       <BorderPane layoutX="3.0" layoutY="27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="10.0" prefHeight="371.0" prefWidth="793.0" styleClass="Border">
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@../css/FrontEnd.css" BorderPane.alignment="CENTER">
                <children>
+                  <Label text="El animal que estás pensando...">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </Label>
                   <Label fx:id="pregunta" text="Label">
                      <font>
                         <Font size="18.0" />

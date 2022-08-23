@@ -29,7 +29,7 @@
                   <TilePane fx:id="animalesEncontrados" alignment="CENTER" orientation="VERTICAL" prefHeight="131.0" prefWidth="792.0" />
                   <ImageView fx:id="imagenAnimal" fitHeight="162.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/animales/sinRespuesta.jpg" />
+                        <Image url="@../../../../../../../archivos/animales/sinRespuesta.jpg" />
                      </image></ImageView>
                </children>
             </VBox>
