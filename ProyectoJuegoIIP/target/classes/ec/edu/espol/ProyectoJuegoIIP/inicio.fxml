@@ -22,28 +22,6 @@
                </font>
             </Label>
          </top>
-         <bottom>
-            <HBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="btonSi" mnemonicParsing="false" onAction="#botonSi" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSi" text="SI">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="btonNo" mnemonicParsing="false" onAction="#botonNo" prefHeight="60.0" prefWidth="60.0" styleClass="buttonNo" text="NO">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </bottom>
          <left>
             <VBox alignment="CENTER" prefHeight="255.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <children>
@@ -79,6 +57,37 @@
                </children>
             </VBox>
          </left>
+         <bottom>
+            <VBox prefHeight="91.0" prefWidth="793.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="btonSi" mnemonicParsing="false" onAction="#botonSi" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSi" text="SI">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btonNo" mnemonicParsing="false" onAction="#botonNo" prefHeight="60.0" prefWidth="60.0" styleClass="buttonNo" text="NO">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="cargaArchivos" mnemonicParsing="false" onAction="#cargarArchivos" text="Cargar archivos de juego">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="40.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </bottom>
       </BorderPane>
       <ImageView fx:id="close" fitHeight="16.0" fitWidth="16.0" layoutX="770.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>

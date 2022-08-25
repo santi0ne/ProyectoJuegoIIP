@@ -5,7 +5,11 @@
  */
 package ec.edu.espol.ProyectoJuegoIIP;
 
+import static ec.edu.espol.ProyectoJuegoIIP.VentanaJuegoController.listaPreguntas;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -38,22 +42,40 @@ public class InicioController  {
     private Label txtTitle;
     @FXML
     private ImageView icon;
+    @FXML
+    private Button cargaArchivos;
     
     static Integer numPreguntasSelecc;
+    int numPreguntasCargadas;
+   
 
  
     public void initialize() {
-        SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 9);
-        intFactory.setValue(9);
+        
+        listaPreguntas.removeAll(listaPreguntas);
+        numPreguntasCargadas=0;
+        
+        int contador=0;
+        
+        try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/preguntas.txt"))){
+            String linea;
+            while((linea=bufferedReader.readLine())!=null){
+                VentanaJuegoController.listaPreguntas.add(linea);    
+                contador++;
+                }
+        } catch (IOException ex) { 
+            ex.printStackTrace();
+        }
+        
+        numPreguntasCargadas=VentanaJuegoController.listaPreguntas.size();
+        
+        SpinnerValueFactory<Integer> intFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, numPreguntasCargadas);
+        intFactory.setValue(numPreguntasCargadas);
         numPreguntas.setValueFactory(intFactory);
         cerrarVentana();
         moverVentana();
         miniVentana();
     } 
-
-    public static Integer getNumPreguntas() {
-        return numPreguntasSelecc;
-    }
     
     
 
@@ -108,5 +130,9 @@ public class InicioController  {
             Stage stage = (Stage) this.txtTitle.getScene().getWindow();
             stage.setIconified(true);
         });
+    }
+    
+    public void cargarArchivos() throws IOException{
+        App.setRoot("cargaArchivos");
     }
 }

@@ -3,4 +3,5 @@ ec\edu\espol\ProyectoJuegoIIP\ResultadosController.class
 ec\edu\espol\ProyectoJuegoIIP\VentanaJuegoController.class
 module-info.class
 ec\edu\espol\ProyectoJuegoIIP\InicioController.class
+ec\edu\espol\ProyectoJuegoIIP\CargaArchivosController.class
 ec\edu\espol\tda\DecisionTree.class

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.CargaArchivosController">
+   <children>
+      <BorderPane layoutX="4.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="792.0" styleClass="Border">
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Instrucciones de carga:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="60.0" prefWidth="729.0" text="Debes cargar dos archivos separados, uno de preguntas y otro de respuestas con los nombres preguntas.txt y respuestas.txt respectivamente y con el siguiente formato" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label text="Archivo de preguntas">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/preguntas.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="cargaPreguntas" mnemonicParsing="false" onAction="#cargarPregunta" text="Cargar preguntas">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="nombrePreg" text="Archivo seleccionado: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label text="Archivo de respuestas">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fitHeight="107.0" fitWidth="396.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/respuestas.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="cargaRespuestas" mnemonicParsing="false" onAction="#cargarRespuesta" text="Cargar respuestas">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="nombreResp" text="Archivo seleccionado">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="792.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btonCancelar" mnemonicParsing="false" onAction="#reiniciar" text="Cancelar">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cargar" mnemonicParsing="false" onAction="#cargarArchivos" text="Cargar archivos">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+      <ImageView fx:id="close" fitHeight="16.0" fitWidth="16.0" layoutX="770.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cancel.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="min" fitHeight="16.0" fitWidth="16.0" layoutX="746.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/minimizar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="icon" fitHeight="16.0" fitWidth="16.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/turtle.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtTitle" layoutX="37.0" layoutY="6.0" styleClass="Encabezado" text="Animals Everywhere!">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

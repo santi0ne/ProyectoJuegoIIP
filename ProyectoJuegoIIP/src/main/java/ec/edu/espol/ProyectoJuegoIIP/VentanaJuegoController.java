@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -46,26 +47,14 @@ public class VentanaJuegoController {
     static private ArrayList<String> respuestas = new ArrayList<>(); 
     DecisionTree<String> arbolPregunta;
     DecisionTree<String> preguntaActual;
+    static List<String> listaPreguntas= new ArrayList<>();
     
 
     public void initialize() throws IOException {
         
         respuestas.removeAll(respuestas);
         
-        int num=InicioController.getNumPreguntas();
-        int contador=0;
-        
-        ArrayList<String> listaPreguntas= new ArrayList<>();
-        
-        try(BufferedReader bufferedReader= new BufferedReader(new FileReader ("archivos/preguntas.txt"))){
-            String linea;
-            while((linea=bufferedReader.readLine())!=null && contador<num){
-                listaPreguntas.add(linea);    
-                contador++;
-                }
-        } catch (IOException ex) { 
-            ex.printStackTrace();
-        }
+        listaPreguntas=listaPreguntas.subList(0, InicioController.numPreguntasSelecc);
         
         arbolPregunta=new DecisionTree<>(listaPreguntas.get(0));
         listaPreguntas.remove(listaPreguntas.get(0));
