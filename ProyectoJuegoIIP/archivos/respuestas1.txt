@@ -23,7 +23,7 @@ Rinoceronte,si,no,si,no,si,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Ballena,si,si,no,no,si,no,no,si,no,no,no,si,no,no,no,no,si,no,no,no
 Leon,si,si,si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 BallenaJorobada,si,si,no,no,si,no,no,si,no,no,no,si,si,no,no,no,si,no,no,no
-Canguro,si,no,no,si,si,no,si,no,no,no,no,no,no,si,no,no,no,no,no
+Canguro,si,no,no,no,si,si,no,si,no,no,no,no,no,no,si,no,no,no,no,no
 Tigre,si,si,si,no,si,si,no,si,no,no,no,no,no,si,no,si,no,no,no,no
 Lobo,si,si,si,no,si,si,no,si,no,no,no,no,no,si,no,no,no,no,no,no
 Aguila,no,si,no,no,no,no,no,si,no,si,si,no,no,no,no,no,no,no,no,no
@@ -33,7 +33,7 @@ Gusano,no,no,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no,no,si,no
 Buho-Lechuza,no,si,no,no,no,no,no,si,no,si,si,no,no,no,no,no,no,si,no,si
 Loro-Perico,no,no,no,si,no,no,no,si,no,si,no,no,no,si,no,no,no,no,no,si
 Gallo-Gallina,no,no,no,si,no,no,si,si,no,no,no,no,no,no,no,no,no,no,no,si
-Mono-Gorila,si,no,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
+Mono-Gorila,si,no,no,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Foca-Delfin,si,si,no,no,si,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Tucan-Pelicano,no,no,no,no,no,no,no,si,no,si,no,no,no,si,no,no,no,no,no,si
 Pajaro-Colibri,no,no,no,no,no,no,no,si,no,si,no,no,no,no,no,no,no,no,no,si
