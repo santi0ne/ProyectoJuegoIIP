@@ -51,4 +51,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-radius: 30;
 }
 
+.buttonFormat{
+    -fx-background-color: #D5F5E3;
+    -fx-background-radius: 10;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill: #196F3D;
+}
 
+.buttonFormat:hover{
+    -fx-background-color: #59F169;
+    -fx-background-radius: 10;
+}
+
+.buttonFormat:pressed{
+    -fx-background-color: #94F99E;
+    -fx-background-radius: 10;
+}
+
+.textoTitulo{
+    -fx-font-family: "Century Gothic";
+}
+
+.texto{
+    -fx-font-family: "Century Gothic";
+    -fx-font-size: 12pt;
+}

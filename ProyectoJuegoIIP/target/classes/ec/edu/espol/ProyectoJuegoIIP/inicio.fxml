@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.InicioController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" styleClass="root" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.InicioController">
    <children>
       <BorderPane layoutX="3.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="793.0" styleClass="Border" stylesheets="@../css/FrontEnd.css">
          <top>
-            <Label prefHeight="53.0" prefWidth="343.0" text="Animals Everywhere!" BorderPane.alignment="CENTER">
+            <Label prefHeight="53.0" prefWidth="343.0" styleClass="textoTitulo" text="Animals Everywhere!" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="34.0" />
                </font>
@@ -25,7 +25,7 @@
          <left>
             <VBox alignment="CENTER" prefHeight="255.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="0.0" prefWidth="788.0" text="Para este juego debes pensar en un animal y a través de varias preguntas intentaré adivinar cuál es">
+                  <Label prefHeight="26.0" prefWidth="782.0" styleClass="texto" text="Para este juego debes pensar en un animal y a través de varias preguntas intentaré adivinar cuál es" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -33,7 +33,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="En cuántas preguntas debo adivinar el animal en el que estás pensando?">
+                  <Label styleClass="texto" text="En cuántas preguntas debo adivinar el animal en el que estás pensando?">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -41,12 +41,12 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <Spinner fx:id="numPreguntas" prefHeight="25.0" prefWidth="67.0">
+                  <Spinner fx:id="numPreguntas" prefHeight="25.0" prefWidth="67.0" styleClass="buttonFormat">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
                   </Spinner>
-                  <Label text="Listo para empezar el juego?">
+                  <Label styleClass="texto" text="Listo para empezar el juego?">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -80,7 +80,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button fx:id="cargaArchivos" mnemonicParsing="false" onAction="#cargarArchivos" text="Cargar archivos de juego">
+                  <Button fx:id="cargaArchivos" mnemonicParsing="false" onAction="#cargarArchivos" styleClass="buttonFormat" text="Cargar archivos de juego">
                      <VBox.margin>
                         <Insets bottom="10.0" left="40.0" />
                      </VBox.margin>

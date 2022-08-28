@@ -188,8 +188,15 @@ public class CargaArchivosController{
     
     public void colocarImagenBoton(){
         URL linkHouse = getClass().getResource("/ec/edu/espol/images/casa.png");
-        Image imgHouse = new Image(linkHouse.toString(), 50, 50, false, true);
+        URL linkSubir = getClass().getResource("/ec/edu/espol/images/subir.png");
+        URL linkUpload = getClass().getResource("/ec/edu/espol/images/subir-archivo.png");
+        Image imgHouse = new Image(linkHouse.toString(), 20, 20, false, true);
+        Image imgSubir = new Image(linkSubir.toString(), 20, 20, false, true);
+        Image imgUpload = new Image(linkUpload.toString(), 20, 20, false, true);
         btonCancelar.setGraphic(new ImageView(imgHouse));
+        cargar.setGraphic(new ImageView(imgSubir));
+        cargaPreguntas.setGraphic(new ImageView(imgUpload));
+        cargaRespuestas.setGraphic(new ImageView(imgUpload));
     }
     
 }

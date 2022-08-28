@@ -9,6 +9,7 @@ import static ec.edu.espol.ProyectoJuegoIIP.VentanaJuegoController.listaPregunta
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -75,6 +77,7 @@ public class InicioController  {
         cerrarVentana();
         moverVentana();
         miniVentana();
+        colocarImagenBoton();
     } 
     
     
@@ -135,4 +138,11 @@ public class InicioController  {
     public void cargarArchivos() throws IOException{
         App.setRoot("cargaArchivos");
     }
+    
+    public void colocarImagenBoton(){
+        URL linkUpload = getClass().getResource("/ec/edu/espol/images/subir-archivo.png");
+        Image imgUpload = new Image(linkUpload.toString(), 20, 20, false, true);
+        cargaArchivos.setGraphic(new ImageView(imgUpload));
+    }
+
 }

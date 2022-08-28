@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.ResultadosController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.ResultadosController">
    <children>
       <BorderPane layoutX="4.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="792.0" styleClass="Border">
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="respuestaTitulo" text="El animal en que has pensado es:">
+                  <Label fx:id="respuestaTitulo" styleClass="textoTitulo" text="El animal en que has pensado es:">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -37,7 +37,7 @@
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="792.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="volverJugar" mnemonicParsing="false" onAction="#reiniciar" text="Volver a jugar">
+                  <Button fx:id="volverJugar" mnemonicParsing="false" onAction="#reiniciar" styleClass="buttonFormat" text="Volver a jugar">
                      <HBox.margin>
                         <Insets right="50.0" />
                      </HBox.margin>

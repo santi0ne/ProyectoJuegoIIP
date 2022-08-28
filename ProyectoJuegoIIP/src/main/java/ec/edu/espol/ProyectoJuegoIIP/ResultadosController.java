@@ -171,7 +171,7 @@ public class ResultadosController{
     
     public void colocarImagenBoton(){
         URL linkHouse = getClass().getResource("/ec/edu/espol/images/casa.png");
-        Image imgHouse = new Image(linkHouse.toString(), 50, 50, false, true);
+        Image imgHouse = new Image(linkHouse.toString(), 30, 30, false, true);
         volverJugar.setGraphic(new ImageView(imgHouse));
     }
     

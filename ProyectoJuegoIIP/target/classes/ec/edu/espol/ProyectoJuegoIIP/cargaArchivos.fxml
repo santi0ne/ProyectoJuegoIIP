@@ -11,18 +11,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.CargaArchivosController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" stylesheets="@../css/FrontEnd.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ProyectoJuegoIIP.CargaArchivosController">
    <children>
       <BorderPane layoutX="4.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="792.0" styleClass="Border">
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Instrucciones de carga:">
+                  <Label styleClass="textoTitulo" text="Instrucciones de carga">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="60.0" prefWidth="729.0" text="Debes cargar dos archivos separados, uno de preguntas y otro de respuestas con los nombres preguntas.txt y respuestas.txt respectivamente y con el siguiente formato" textOverrun="CLIP" wrapText="true">
+                  <Label prefHeight="60.0" prefWidth="729.0" styleClass="texto" text="Debes cargar dos archivos separados, uno de preguntas y otro de respuestas con los nombres preguntas.txt y respuestas.txt respectivamente y con el siguiente formato" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -31,7 +31,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
                            <children>
-                              <Label text="Archivo de preguntas">
+                              <Label styleClass="textoTitulo" text="Archivo de preguntas">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -44,7 +44,7 @@
                                     <Image url="@../images/preguntas.png" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="cargaPreguntas" mnemonicParsing="false" onAction="#cargarPregunta" text="Cargar preguntas">
+                              <Button fx:id="cargaPreguntas" mnemonicParsing="false" onAction="#cargarPregunta" styleClass="buttonFormat" text="Cargar preguntas">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
@@ -61,7 +61,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
                            <children>
-                              <Label text="Archivo de respuestas">
+                              <Label styleClass="textoTitulo" text="Archivo de respuestas">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -74,7 +74,7 @@
                                     <Image url="@../images/respuestas.png" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="cargaRespuestas" mnemonicParsing="false" onAction="#cargarRespuesta" text="Cargar respuestas">
+                              <Button fx:id="cargaRespuestas" mnemonicParsing="false" onAction="#cargarRespuesta" styleClass="buttonFormat" text="Cargar respuestas">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
@@ -97,12 +97,12 @@
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="792.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btonCancelar" mnemonicParsing="false" onAction="#reiniciar" text="Cancelar">
+                  <Button fx:id="btonCancelar" mnemonicParsing="false" onAction="#reiniciar" styleClass="buttonFormat" text="Cancelar">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="cargar" mnemonicParsing="false" onAction="#cargarArchivos" text="Cargar archivos">
+                  <Button fx:id="cargar" mnemonicParsing="false" onAction="#cargarArchivos" styleClass="buttonFormat" text="Subir archivos">
                      <HBox.margin>
                         <Insets right="50.0" />
                      </HBox.margin>
