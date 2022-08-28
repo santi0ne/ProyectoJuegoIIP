@@ -5,8 +5,8 @@ Ornitorrinco,si,no,si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Koala,si,no,si,no,no,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Murcielago,si,si,no,no,no,si,no,si,no,si,si,no,no,no,no,no,no,no,no,si
 Tortuga,no,no,si,si,si,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no
-Pato,no,no,no,si,si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no
-Serpierte,no,si,no,no,si,no,no,si,no,no,si,no,no,no,no,si,no,no,no,si
+Pato,no,no,no,si,si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,si
+Serpiente,no,si,no,no,si,no,no,si,no,no,si,no,no,no,no,si,no,no,no,si
 Pulpo,no,si,no,no,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no,no
 Pez,no,no,no,no,si,no,si,si,no,no,no,no,no,no,no,si,no,no,no,no
 Camaleon,no,no,si,no,no,no,no,si,no,no,no,no,no,no,no,si,no,no,no,no
@@ -14,7 +14,7 @@ Camello,si,no,si,no,si,si,no,si,no,no,no,si,si,no,no,no,no,no,no,no
 Jirafa,si,no,si,no,si,si,no,si,no,no,no,si,no,no,no,no,no,no,no,no
 Oveja,si,no,si,si,si,si,si,si,no,no,no,no,no,si,no,no,no,no,no,no
 Cerdo,si,no,si,si,si,si,si,si,no,no,no,no,no,no,no,no,no,no,no,no
-Caballlo,si,no,si,si,si,si,no,si,no,no,no,si,no,no,no,no,no,no,no,no
+Caballo,si,no,si,si,si,si,no,si,no,no,no,si,no,no,no,no,no,no,no,no
 Zebra,si,no,si,no,si,si,no,si,no,no,no,no,no,no,no,si,no,no,no,no
 Burro,si,no,si,si,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Oso,si,si,si,no,si,si,no,si,no,no,no,si,no,si,no,no,no,no,no,no
@@ -34,7 +34,8 @@ Buho-Lechuza,no,si,no,no,no,no,no,si,no,si,si,no,no,no,no,no,no,si,no,si
 Loro-Perico,no,no,no,si,no,no,no,si,no,si,no,no,no,si,no,no,no,no,no,si
 Gallo-Gallina,no,no,no,si,no,no,si,si,no,no,no,no,no,no,no,no,no,no,no,si
 Mono-Gorila,si,no,no,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
-Foca-Delfin,si,si,no,no,si,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no
+Foca,si,si,no,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no
+Delfin,si,si,no,no,si,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no
 Tucan-Pelicano,no,no,no,no,no,no,no,si,no,si,no,no,no,si,no,no,no,no,no,si
 Pajaro-Colibri,no,no,no,no,no,no,no,si,no,si,no,no,no,no,no,no,no,no,no,si
 Hormiga-Escorpion,no,no,no,no,si,no,no,no,no,no,no,no,no,no,no,no,no,no,si,si
