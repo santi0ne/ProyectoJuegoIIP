@@ -27,7 +27,6 @@ public class App extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setResizable(false);
         stage.setTitle("Animals Everywhere!");
-        stage.getIcons().add(new Image("file:main/resources/ec/edu/espol/images/magic.png"));
         stage.show();
     }
 

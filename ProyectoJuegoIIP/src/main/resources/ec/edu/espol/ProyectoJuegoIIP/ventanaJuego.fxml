@@ -50,7 +50,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button fx:id="btnCorregir" mnemonicParsing="false" onAction="#corregirRespuesta" text="Corregir Respuesta" />
+                  <Button fx:id="btnCorregir" mnemonicParsing="false" onAction="#corregirRespuesta" styleClass="buttonFormat" text="Corregir Respuesta" />
                </children>
             </VBox>
          </center>

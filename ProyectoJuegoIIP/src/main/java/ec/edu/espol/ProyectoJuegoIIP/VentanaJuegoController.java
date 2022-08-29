@@ -47,7 +47,7 @@ public class VentanaJuegoController {
     static private ArrayList<String> respuestas = new ArrayList<>(); 
     DecisionTree<String> arbolPregunta;
     DecisionTree<String> preguntaActual;
-      DecisionTree<String> preguntaPrevia;
+    DecisionTree<String> preguntaPrevia;
     String preguntaRaiz=null;
     
     static List<String> listaPreguntas= new ArrayList<>();
@@ -177,10 +177,13 @@ public class VentanaJuegoController {
     public void colocarImagenBoton(){
         URL linkSi = getClass().getResource("/ec/edu/espol/images/me-gusta.png");
         URL linkNo = getClass().getResource("/ec/edu/espol/images/disgusto.png");
+        URL linkDeshacer = getClass().getResource("/ec/edu/espol/images/deshacer.png");
         Image imgSi = new Image(linkSi.toString(), 50, 50, false, true);
         Image imgNo = new Image(linkNo.toString(), 50, 50, false, true);
+        Image imgDes = new Image(linkDeshacer.toString(), 20, 20, false, true);
         respSi.setGraphic(new ImageView(imgSi));
         respNo.setGraphic(new ImageView(imgNo));
+        btnCorregir.setGraphic(new ImageView(imgDes));
     }
     
 }
