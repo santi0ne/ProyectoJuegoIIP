@@ -47,7 +47,12 @@ public class VentanaJuegoController {
     static private ArrayList<String> respuestas = new ArrayList<>(); 
     DecisionTree<String> arbolPregunta;
     DecisionTree<String> preguntaActual;
+      DecisionTree<String> preguntaPrevia;
+    String preguntaRaiz=null;
+    
     static List<String> listaPreguntas= new ArrayList<>();
+     @FXML
+    private Button btnCorregir;
     
 
     public void initialize() throws IOException {
@@ -57,6 +62,8 @@ public class VentanaJuegoController {
         listaPreguntas=listaPreguntas.subList(0, InicioController.numPreguntasSelecc);
         
         arbolPregunta=new DecisionTree<>(listaPreguntas.get(0));
+        preguntaRaiz = listaPreguntas.get(0);
+        
         listaPreguntas.remove(listaPreguntas.get(0));
         
         
@@ -89,8 +96,11 @@ public class VentanaJuegoController {
        
         else{
             respuestas.add("si");
+            System.out.println("La respuestas actuales son : "+respuestas.toString());
+            preguntaPrevia = preguntaActual;
             preguntaActual=preguntaActual.izquierdo;
             pregunta.setText(preguntaActual.data);
+            btnCorregir.setDisable(false);
         }   
 
     }
@@ -105,11 +115,34 @@ public class VentanaJuegoController {
        
         else{
             respuestas.add("no");
-            preguntaActual=preguntaActual.derecho;
+            System.out.println("La respuestas actuales son : " + respuestas.toString());
+            preguntaPrevia = preguntaActual;
+            preguntaActual = preguntaActual.derecho;
             pregunta.setText(preguntaActual.data);
+            btnCorregir.setDisable(false);
         }  
         
     }
+    
+    
+    @FXML
+    public void corregirRespuesta() throws IOException {
+        if (preguntaPrevia == null) {
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("PREGUNTA INICIAL??");
+            alerta.setContentText("No se puede corregir la pregunta inicial...");
+            alerta.showAndWait();
+        } else {
+            preguntaActual = preguntaPrevia;
+            pregunta.setText(preguntaActual.data);
+            int numRespuestas=respuestas.size();
+            respuestas.remove(numRespuestas-1);
+        }
+        
+        btnCorregir.setDisable(true);
+
+    }
+    
     
     public void cerrarVentana(){
         close.setOnMouseClicked(e->{
